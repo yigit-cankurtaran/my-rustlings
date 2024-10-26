@@ -18,6 +18,11 @@ fn main() {
     // from a different language than your own, try an emoji 😉
     // let your_character = '';
 
+    let your_character: char = 'y';
+    // using single quotes works for chars
+    // strings need double quotes
+    // helps distinguish each other
+
     if your_character.is_alphabetic() {
         println!("Alphabetical!");
     } else if your_character.is_numeric() {
