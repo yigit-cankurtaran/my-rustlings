@@ -1,5 +1,7 @@
 // TODO: Fix the compiler error in the function without adding any new line.
-fn fill_vec(vec: Vec<i32>) -> Vec<i32> {
+fn fill_vec(mut vec: Vec<i32>) -> Vec<i32> {
+    // adding mut here makes the compiler error go away
+    // enabling us to modify the vec
     vec.push(88);
 
     vec
