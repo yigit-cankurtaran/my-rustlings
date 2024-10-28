@@ -5,6 +5,11 @@ fn array_and_vec() -> ([i32; 4], Vec<i32>) {
     // Use the vector macro.
     // let v = ???;
 
+    let v: Vec<i32> = vec![10, 20, 30, 40];
+    // using ! because this is a macro
+    // we're creating a vector with the elements 10, 20, 30, 40
+    // if we don't need initial elements we can use Vec::new()
+
     (a, v)
 }
 
