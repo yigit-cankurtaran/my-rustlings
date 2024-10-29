@@ -13,25 +13,32 @@ fn string(arg: String) {
 // Your task is to replace `placeholder(…)` with either `string_slice(…)`
 // or `string(…)` depending on what you think each value is.
 fn main() {
-    placeholder("blue");
+    string_slice("blue");
 
-    placeholder("red".to_string());
+    string("red".to_string());
 
-    placeholder(String::from("hi"));
+    string(String::from("hi"));
 
-    placeholder("rust is fun!".to_owned());
+    string("rust is fun!".to_owned());
+    // to_owned() is used to make an owned copy of a borrowed value
 
-    placeholder("nice weather".into());
+    string_slice("nice weather".into());
+    // into() is used to convert to an inferred type
 
-    placeholder(format!("Interpolation {}", "Station"));
+    string(format!("Interpolation {}", "Station"));
 
     // WARNING: This is byte indexing, not character indexing.
     // Character indexing can be done using `s.chars().nth(INDEX)`.
-    placeholder(&String::from("abc")[0..1]);
+    string_slice(&String::from("abc")[0..1]);
+    // we're getting a string slice of the first two characters
+    // this is a string slice of the first two characters of "abc"
 
-    placeholder("  hello there ".trim());
+    string_slice("  hello there ".trim());
+    // trim returns a slice that doesn't include the whitespace at the beginning or end
 
-    placeholder("Happy Monday!".replace("Mon", "Tues"));
+    string("Happy Monday!".replace("Mon", "Tues"));
+    // replace returns a new string with all occurrences of a string replaced with another
 
-    placeholder("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    string("mY sHiFt KeY iS sTiCkY".to_lowercase());
+    // to_lowercase returns a new string with all characters in lowercase
 }

@@ -16,6 +16,11 @@ mod delicious_snacks {
         pub const CUCUMBER: &str = "Cucumber";
         pub const CARROT: &str = "Carrot";
     }
+
+    // we need these to be public so that we can use them in the main function
+    pub use self::fruits::PEAR as fruit;
+    pub use self::veggies::CUCUMBER as veggie;
+    // we also can name aliases for the imported items
 }
 
 fn main() {

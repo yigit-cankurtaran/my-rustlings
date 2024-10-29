@@ -1,13 +1,22 @@
 fn trim_me(input: &str) -> &str {
     // TODO: Remove whitespace from both ends of a string.
+    input.trim()
+    // trim removes whitespace and returns a slice of the string
 }
 
 fn compose_me(input: &str) -> String {
     // TODO: Add " world!" to the string! There are multiple ways to do this.
+    let added_word = "world!";
+    input.to_string() + " " + added_word
+    // to_string() converts the &str to a String
+    // we add the added_word to the input and return the result
 }
 
 fn replace_me(input: &str) -> String {
     // TODO: Replace "cars" in the string with "balloons".
+    input.replace("cars", "balloons")
+    // replace replaces the first occurrence of the first string with the second
+    // modifies the original string so we don't need to change the return type
 }
 
 fn main() {
