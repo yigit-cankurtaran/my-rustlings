@@ -33,6 +33,11 @@ fn vec_map(input: &[i32]) -> Vec<i32> {
 
 fn main() {
     // You can optionally experiment here.
+    let a = [1, 2, 3];
+    let b = vec_map(&a);
+    println!("vec_map: {:?}", b);
+    let c = vec_loop(&a);
+    println!("vec_loop: {:?}", c);
 }
 
 #[cfg(test)]
