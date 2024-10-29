@@ -24,14 +24,21 @@ impl Package {
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn is_international(&self) {
+    fn is_international(&self) -> bool {
         // TODO: Read the tests that use this method to find out when a package
         // is considered international.
+        self.sender_country != self.recipient_country
+        // returns true if the sender and recipient are different
+        // we need to use self here because we are in an impl block
+        // and self is the struct itself
+        // if we do this without self it will give us an error
     }
 
     // TODO: Add the correct return type to the function signature.
-    fn get_fees(&self, cents_per_gram: u32) {
+    fn get_fees(&self, cents_per_gram: u32) -> u32 {
         // TODO: Calculate the package's fees.
+        self.weight_in_grams * cents_per_gram
+        // returns the weight of the package * the number of cents per gram
     }
 }
 
