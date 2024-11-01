@@ -10,16 +10,30 @@ fn fruit_basket() -> HashMap<String, u32> {
     // TODO: Declare the hash map.
     // let mut basket =
 
+    // this is how we declare a new hash map
+    let mut basket = HashMap::new();
+
     // Two bananas are already given for you :)
     basket.insert(String::from("banana"), 2);
+    // thank you <3
 
     // TODO: Put more fruits in your basket.
+
+    basket.insert(String::from("apple"), 1);
+    basket.insert(String::from("mango"), 1);
+    basket.insert(String::from("kiwi"), 4);
+    basket.insert(String::from("dragonfruit"), 3);
+    // seems to be printing randomly
 
     basket
 }
 
 fn main() {
     // You can optionally experiment here.
+    println!("{:?}", fruit_basket());
+    // this is how we print the hash map
+    // this is called a debug format
+    // used to output more complex data structures in a human readable way
 }
 
 #[cfg(test)]
