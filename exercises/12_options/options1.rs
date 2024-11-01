@@ -4,6 +4,15 @@
 // `hour_of_day` is higher than 23.
 fn maybe_icecream(hour_of_day: u16) -> Option<u16> {
     // TODO: Complete the function body.
+
+    if hour_of_day > 23 {
+        None
+    } else if hour_of_day >= 22 {
+        Some(0)
+    } else {
+        Some(5)
+        // we have to use Some because we are returning an option
+    }
 }
 
 fn main() {
@@ -18,7 +27,9 @@ mod tests {
     fn raw_value() {
         // TODO: Fix this test. How do you get the value contained in the
         // Option?
-        let icecreams = maybe_icecream(12);
+        let icecreams = maybe_icecream(12).unwrap();
+        // getting the value from the option
+        // out normal value is a Some(i) but we need to unwrap it for the test
 
         assert_eq!(icecreams, 5); // Don't change this line.
     }
