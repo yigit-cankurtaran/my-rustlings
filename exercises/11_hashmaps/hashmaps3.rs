@@ -24,9 +24,17 @@ fn build_scores_table(results: &str) -> HashMap<&str, TeamScores> {
         let mut split_iterator = line.split(',');
         // NOTE: We use `unwrap` because we didn't deal with error handling yet.
         let team_1_name = split_iterator.next().unwrap();
+        // looks until the first comma for the first value
         let team_2_name = split_iterator.next().unwrap();
+        // jumps after the comma after the first one is created
+        // the second value is team_2_name
         let team_1_score: u8 = split_iterator.next().unwrap().parse().unwrap();
+        // after team_2_name is created the third value is team_1_score
         let team_2_score: u8 = split_iterator.next().unwrap().parse().unwrap();
+        // jumps after that comma and then gets the fourth value
+
+        // each call to next moves to the next value
+        // this is how we can use the same code and get different values
 
         // TODO: Populate the scores table with the extracted details.
         // Keep in mind that goals scored by team 1 will be the number of goals

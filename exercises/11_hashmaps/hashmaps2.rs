@@ -37,6 +37,8 @@ fn fruit_basket(basket: &mut HashMap<Fruit, u32>) {
         if fruit == Fruit::Banana || fruit == Fruit::Pineapple {
             // if it's a banana or a pineapple, we can add it
             basket.insert(fruit, 2);
+            // using insert to add a new key value pair
+            // 2 of each fruit if it's not an apple or a mango or a lychee
         }
     }
 }

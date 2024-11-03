@@ -17,6 +17,10 @@ fn maybe_icecream(hour_of_day: u16) -> Option<u16> {
 
 fn main() {
     // You can optionally experiment here.
+    println!("{:?}", maybe_icecream(12));
+    // prints Some(5)
+    println!("{:?}", maybe_icecream(12).unwrap());
+    // prints 5
 }
 
 #[cfg(test)]

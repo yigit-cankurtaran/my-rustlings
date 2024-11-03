@@ -40,21 +40,10 @@ mod tests {
             // needs 2 layers of pattern matching (nested)
             // first Some matches the pop and that returns an Option
             // then the Option is matched and the value is extracted
-
-            // if it encounters a None it will stop
-
-            // checks if the value popped is equal to the cursor
             assert_eq!(integer, cursor);
             cursor -= 1;
-            // decrements the cursor
-            // the loop ends when the cursor is 0
-            // because the vector only has a None
         }
 
         assert_eq!(cursor, 0);
-        // asserts that the cursor is 0
-        // meaning all values were popped
-
-        // this example is about handling values that might be absent
     }
 }
