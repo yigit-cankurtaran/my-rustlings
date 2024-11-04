@@ -15,12 +15,16 @@ fn total_cost(item_quantity: &str) -> Result<i32, ParseIntError> {
 
 // TODO: Fix the compiler error by changing the signature and body of the
 // `main` function.
-fn main() {
+fn main() -> Result<(), ParseIntError> {
     let mut tokens = 100;
     let pretend_user_input = "8";
 
     // Don't change this line.
     let cost = total_cost(pretend_user_input)?;
+    // we need to use ? because we're returning a Result type
+    // this returns the error if there's one
+    // and the cost as an i32 if there's no error
+    // a shorthand way of matching and returning an Ok
 
     if cost > tokens {
         println!("You can't afford that many!");
@@ -28,4 +32,8 @@ fn main() {
         tokens -= cost;
         println!("You now have {tokens} tokens.");
     }
+
+    Ok(())
+    // returning an ok because we're returning a Result type
+    // indicates the function executed successfully
 }
