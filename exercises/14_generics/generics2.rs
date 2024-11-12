@@ -8,11 +8,22 @@ struct Wrapper<T> {
 impl<T> Wrapper<T> {
     fn new(value: T) -> Self {
         Wrapper { value }
+        // this calls the constructor of the Wrapper struct
+        // the wrapper wraps whatever value is passed to it
+        // and stores it in the value field
     }
 }
 
 fn main() {
     // You can optionally experiment here.
+    println!(
+        "when we wrap a number the value is: {}",
+        &Wrapper::new(42).value // using & because we want to borrow the value
+    );
+    println!(
+        "when we wrap a string the value is: {}",
+        &Wrapper::new("42").value
+    );
 }
 
 #[cfg(test)]
