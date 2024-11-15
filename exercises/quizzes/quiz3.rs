@@ -12,18 +12,28 @@
 // block to support alphabetical report cards in addition to numerical ones.
 
 // TODO: Adjust the struct as described above.
-struct ReportCard {
-    grade: f32,
+
+use std::fmt::Display;
+
+struct ReportCard<T> {
+    // implementing ReportCard flexibly
+    // the <T> tells rust this struct will have a generic type
+    grade: T, // this is a generic type
     student_name: String,
     student_age: u8,
 }
 
 // TODO: Adjust the impl block as described above.
-impl ReportCard {
+impl<T: Display> ReportCard<T> {
+    // T must implement Display
+    // ReportCard is generic over T
     fn print(&self) -> String {
         format!(
             "{} ({}) - achieved a grade of {}",
-            &self.student_name, &self.student_age, &self.grade,
+            &self.student_name,
+            &self.student_age,
+            &self.grade,
+            // this can now print any type of grade that implements Display
         )
     }
 }
