@@ -26,8 +26,10 @@ fn main() {
     // You can optionally experiment here.
     let lol = vec![String::from("Foo")].append_bar();
     println!("lol: {lol:?}");
+    // prints ["Foo", "Bar"]
     let lmao = String::from("Bar").append_bar();
     println!("lmao: {lmao:?}");
+    // prints "BarBar"
 }
 
 #[cfg(test)]
