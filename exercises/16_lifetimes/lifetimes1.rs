@@ -4,7 +4,12 @@
 // not own their own data. What if their owner goes out of scope?
 
 // TODO: Fix the compiler error by updating the function signature.
-fn longest(x: &str, y: &str) -> &str {
+fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
+    // we need to use lifetimes because both the returns are out of scope
+    // when we return something
+    // and we don't know what we will return
+    // e.g. if we return x, the caller will not be able to use x anymore
+    // because it's out of scope
     if x.len() > y.len() {
         x
     } else {

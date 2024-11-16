@@ -15,6 +15,7 @@ fn main() {
     {
         let string2 = String::from("xyz");
         result = longest(&string1, &string2);
+        println!("The longest string is '{result}'");
+        // moving the println here because we need string2 to be valid
     }
-    println!("The longest string is '{result}'");
 }
